@@ -38,7 +38,7 @@ public class ObjectPool<T> where  T : MonoBehaviour
         List<T> freeElements = new List<T>();
         foreach (var element in _elements)
         {
-            if (element.gameObject.activeSelf)
+            if (element.gameObject.activeSelf == false)
                 freeElements.Add(element);
         }
 
@@ -55,7 +55,7 @@ public class ObjectPool<T> where  T : MonoBehaviour
     {
         foreach (var element in _elements)
         {
-            if (element.gameObject.activeSelf)
+            if (element.gameObject.activeSelf == false)
                 return element;
         }
         
